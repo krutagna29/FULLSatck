@@ -1,4 +1,4 @@
-# Full Stack Environment Setup
+#  DAY 1 Full Stack Environment Setup
 
 ## Overview
 
@@ -92,7 +92,7 @@ BLOGDEN/
 
 ---
 
-## API
+
 
 ### GET /
 
@@ -117,16 +117,7 @@ Hello World!
 
 ---
 
-## Future Enhancements
-
-* Add multiple routes
-* Build REST APIs
-* Connect to MongoDB
-* Implement CRUD operations
-* Add authentication using JWT
-* Deploy the application
-
-# Day 2 – React Blog Website
+# Day 2 - Blog Website
 
 ## 📖 About the Project
 
@@ -142,9 +133,7 @@ The application includes a **Home** page, an **Add Blog** page, a reusable **Nav
 * Add Blog page
 * Navigation Bar
 * Footer
-* React Router for page navigation
-* Component-based structure
-* Responsive layout using Bootstrap
+
 
 ---
 
@@ -153,15 +142,14 @@ The application includes a **Home** page, an **Add Blog** page, a reusable **Nav
 * React.js
 * Vite
 * React Router DOM
-* Bootstrap 5
-* CSS3
+
 
 ---
 
 ## 📂 Project Structure
 
 ```text
-day2-react-blog/
+blog/
 │
 ├── public/
 ├── src/
@@ -184,16 +172,10 @@ day2-react-blog/
 
 ## ⚙️ Getting Started
 
-Clone the repository:
-
-```bash
-git clone https://github.com/yourusername/day2-react-blog.git
-```
-
 Move into the project folder:
 
 ```bash
-cd day2-react-blog
+cd blog
 ```
 
 Install the required packages:
@@ -241,16 +223,129 @@ By the end of Day 2, I successfully created:
 
 ---
 
-## 🔮 Next Steps
 
-In the next phase, I plan to:
+# Day 3 – Styling the React Blog Website
 
-* Improve the UI with CSS and Bootstrap
-* Display blog posts dynamically
-* Add form validation
-* Connect the project to an Express.js backend
-* Store blog data in MongoDB
-* Implement authentication and authorization
+## 📖 About the Project
+
+Day 3 was focused on improving the look and feel of the React Blog website. After building the basic structure in the previous step, I used **CSS** and **Bootstrap 5** to create a clean, modern, and responsive user interface.
+
+The goal was to make the application visually appealing while keeping the design simple and easy to use.
+
+---
+
+## 🚀 Features
+
+* Modern Navigation Bar
+* Attractive Hero Section
+* Styled Add Blog Form
+* Responsive Blog Cards
+* Custom Buttons
+* Footer Section
+* Mobile-Friendly Design
+
+---
+
+## 🛠️ Tech Stack
+
+* React.js
+* Vite
+* Bootstrap 5
+* CSS3
+
+---
+
+## 📂 Project Structure
+
+```text
+blog/
+│
+├── public/
+├── src/
+│   ├── assets/
+│   ├── components/
+│   │   ├── Navbar.jsx
+│   │   ├── Footer.jsx
+│   │   └── Layout.jsx
+│   ├── pages/
+│   │   ├── Home.jsx
+│   │   └── AddBlog.jsx
+│   ├── App.jsx
+│   ├── main.jsx
+│   └── index.css
+├── package.json
+└── README.md
+```
+
+---
+
+## ⚙️ Getting Started
+
+
+
+Go to the project folder:
+
+```bash
+cd blog
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start the development server:
+
+```bash
+npm run dev
+```
+
+Open your browser and visit:
+
+```text
+http://localhost:5173
+```
+
+---
+
+## 🎨 What I Styled
+
+During this stage, I worked on improving the overall design of the website by styling:
+
+* Navigation Bar
+* Hero Section
+* Blog Cards
+* Add Blog Form
+* Buttons
+* Footer
+* Responsive Layout for different screen sizes
+
+---
+
+## 📚 What I Learned
+
+Through this project, I learned how to:
+
+* Write reusable CSS for React components
+* Combine Bootstrap with custom CSS
+* Build responsive layouts
+* Improve the user experience with clean UI design
+* Organize styles for better project structure
+
+---
+
+## 🎯 Project Outcome
+
+By the end of Day 3, I successfully created:
+
+* A clean and responsive user interface
+* Professionally styled pages
+* Responsive blog cards
+* A modern blog submission form
+* Consistent styling across the application
+
+---
 
 ---
 
@@ -258,5 +353,4 @@ In the next phase, I plan to:
 
 **Krutagna Patel**
 
-Computer Engineering Student | Full Stack Developer | Cybersecurity Enthusiast
-
+Computer Engineering  | Full Stack Developer
