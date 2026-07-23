@@ -36,7 +36,6 @@ git --version
 
 ---
 
-
 ### Navigate to the Project
 
 ```bash
@@ -127,10 +126,137 @@ Hello World!
 * Add authentication using JWT
 * Deploy the application
 
+# Day 2 – React Blog Website
+
+## 📖 About the Project
+
+This project is part of my Full Stack Development learning journey. On Day 2, I built the basic structure of a blog website using **React.js**. The main goal was to understand how React components work and how to navigate between pages using **React Router**.
+
+The application includes a **Home** page, an **Add Blog** page, a reusable **Navigation Bar**, and a **Footer** component.
+
 ---
 
-## Author
+## 🚀 Features
+
+* Home page
+* Add Blog page
+* Navigation Bar
+* Footer
+* React Router for page navigation
+* Component-based structure
+* Responsive layout using Bootstrap
+
+---
+
+## 🛠️ Tech Stack
+
+* React.js
+* Vite
+* React Router DOM
+* Bootstrap 5
+* CSS3
+
+---
+
+## 📂 Project Structure
+
+```text
+day2-react-blog/
+│
+├── public/
+├── src/
+│   ├── assets/
+│   ├── components/
+│   │   ├── Navbar.jsx
+│   │   ├── Footer.jsx
+│   │   └── Layout.jsx
+│   ├── pages/
+│   │   ├── Home.jsx
+│   │   └── AddBlog.jsx
+│   ├── App.jsx
+│   ├── main.jsx
+│   └── index.css
+├── package.json
+└── README.md
+```
+
+---
+
+## ⚙️ Getting Started
+
+Clone the repository:
+
+```bash
+git clone https://github.com/yourusername/day2-react-blog.git
+```
+
+Move into the project folder:
+
+```bash
+cd day2-react-blog
+```
+
+Install the required packages:
+
+```bash
+npm install
+```
+
+Start the development server:
+
+```bash
+npm run dev
+```
+
+Open your browser and visit:
+
+```text
+http://localhost:5173
+```
+
+---
+
+## 📚 What I Learned
+
+During this project, I learned how to:
+
+* Set up a React project using Vite
+* Create reusable React components
+* Use React Router for navigation
+* Organize a React project into components and pages
+* Build a simple multi-page application
+
+---
+
+## 🎯 Project Outcome
+
+By the end of Day 2, I successfully created:
+
+* A Home page
+* An Add Blog page
+* A reusable Navigation Bar
+* A reusable Footer
+* Client-side routing with React Router
+* A clean and organized project structure
+
+---
+
+## 🔮 Next Steps
+
+In the next phase, I plan to:
+
+* Improve the UI with CSS and Bootstrap
+* Display blog posts dynamically
+* Add form validation
+* Connect the project to an Express.js backend
+* Store blog data in MongoDB
+* Implement authentication and authorization
+
+---
+
+## 👨‍💻 Author
 
 **Krutagna Patel**
 
-Computer Engineering  | Full Stack
+Computer Engineering Student | Full Stack Developer | Cybersecurity Enthusiast
+
