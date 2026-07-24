@@ -224,7 +224,7 @@ By the end of Day 2, I successfully created:
 ---
 
 
-# Day 3 – Styling the React Blog Website
+# Day 3 – Styling the  Blog Website
 
 ## 📖 About the Project
 
@@ -345,12 +345,124 @@ By the end of Day 3, I successfully created:
 * A modern blog submission form
 * Consistent styling across the application
 
----
+
+# Day 4 – Form Validation with Javascript
+
+## 📖 About the Project
+
+On Day 4, I added form validation to the **BlogDen** application to make the Add Blog page more interactive and user-friendly. Instead of allowing users to submit empty forms, I implemented client-side validation using React state and event handling.
+
+This task helped me understand how React manages form data and how to provide instant feedback when users enter invalid or incomplete information.
 
 ---
+
+## 🚀 Features
+
+* Add Blog form validation
+* Required field validation
+* Error messages for empty inputs
+* Form submission handling
+* Controlled form inputs using React
+* Improved user interaction
+
+---
+
+## 🛠️ Technologies Used
+
+* React.js
+* JavaScript (ES6)
+* Vite
+* Bootstrap 5
+* CSS3
+
+---
+
+## 📂 Project Structure
+
+```text
+BLOGDEN/
+│
+├── public/
+├── src/
+│   ├── assets/
+│   ├── components/
+│   ├── pages/
+│   │   ├── Home.jsx
+│   │   └── AddBlog.jsx
+│   ├── App.jsx
+│   ├── main.jsx
+│   └── index.css
+├── package.json
+└── README.md
+```
+
+---
+
+## ▶️ Getting Started
+
+Navigate to the project folder:
+
+```bash
+cd BLOGDEN
+```
+
+Install the dependencies:
+
+```bash
+npm install
+```
+
+Run the development server:
+
+```bash
+npm run dev
+```
+
+Open your browser:
+
+```text
+http://localhost:5173
+```
+
+---
+
+## 💻 What I Implemented
+
+For this task, I enhanced the Add Blog page by:
+
+* Validating all required form fields
+* Preventing form submission if fields are empty
+* Displaying validation error messages
+* Handling form submission using React events
+* Clearing the form after a successful submission
+
+---
+
+## 📚 What I Learned
+
+While working on this task, I learned how to:
+
+* Manage form data using `useState`
+* Handle user input with `onChange`
+* Validate form fields before submission
+* Handle form submission using `onSubmit`
+* Improve the user experience with instant feedback
+
+---
+
+## 🎯 Outcome
+
+By the end of Day 4, I successfully created:
+
+* A fully functional Add Blog form
+* Client-side validation for required fields
+* Dynamic error messages
+* Better user interaction using React event handling
+* A smoother and more user-friendly form experience
+
 
 ## 👨‍💻 Author
 
 **Krutagna Patel**
 
-Computer Engineering  | Full Stack Developer
+Computer Engineering Student | Full Stack Developer 
