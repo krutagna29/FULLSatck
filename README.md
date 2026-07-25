@@ -461,8 +461,123 @@ By the end of Day 4, I successfully created:
 * A smoother and more user-friendly form experience
 
 
+## # Day 5 – Express.js Backend Setup
+
+## 📖 About the Project
+
+On Day 5, I started building the backend for BlogDen using Node.js and Express.js. I created a basic Express server, added GET and POST routes, and tested the APIs with Postman. This was my first step toward connecting the frontend with a backend
+
+---
+
+## 🚀 Features
+
+* Express.js server setup
+* GET route to return a welcome message
+* POST route to receive blog data
+* JSON request handling using Express middleware
+* Basic input validation
+* API testing with Postman
+
+---
+
+## 🛠️ Technologies Used
+
+* Node.js
+* Express.js
+* JavaScript (ES6)
+* Postman
+* Nodemon
+
+---
+
+## 📂 Project Structure
+
+```text
+BLOGDEN/
+│
+├── node_modules/
+├── package.json
+├── package-lock.json
+├── server.js
+└── README.md
+```
+
+---
+
+## 💻 API Endpoints
+
+### GET /
+
+Returns a welcome message.
+
+**Response**
+
+```json
+{
+  "success": true,
+  "message": "Welcome to BlogDen API 🚀"
+}
+```
+
+---
+
+### POST /blogs
+
+Receives blog details from the client.
+
+**Request Body**
+
+```json
+{
+  "title": "My First Blog",
+  "author": "Krutagna Patel",
+  "content": "Learning Express.js is fun!"
+}
+```
+
+**Response**
+
+```json
+{
+  "success": true,
+  "message": "Blog received successfully!",
+  "blog": {
+    "title": "My First Blog",
+    "author": "Krutagna Patel",
+    "content": "Learning Express.js is fun!"
+  }
+}
+```
+
+---
+
+## 📚 What I Learned
+
+While working on this task, I learned how to:
+
+* Set up an Express.js server
+* Create GET and POST routes
+* Handle JSON data using middleware
+* Validate incoming request data
+* Test APIs with Postman
+* Understand the basics of client-server communication
+
+---
+
+## 🎯 Outcome
+
+By the end of Day 5, I successfully:
+
+* Set up an Express.js backend server
+* Created GET and POST API routes
+* Added basic request validation
+* Tested the APIs successfully using Postman
+* Prepared the backend for future CRUD operations
+
+---
 ## 👨‍💻 Author
 
 **Krutagna Patel**
 
-Computer Engineering Student | Full Stack Developer 
+Computer Engineering Student | Full Stack Developer
+
