@@ -574,10 +574,91 @@ By the end of Day 5, I successfully:
 * Tested the APIs successfully using Postman
 * Prepared the backend for future CRUD operations
 
+# Day 6 – Add Blog API
+
+## 📖 About
+
+On Day 6, I created an API to add new blog posts to **BlogDen**. Instead of using a database, I stored the blog data in a **JavaScript array**, which helped me understand how APIs receive and manage data before working with a database.
+
+I also added basic validation to ensure all required fields are provided before creating a blog post.
+
 ---
+
+## 🚀 Features
+
+* Create a new blog using a POST API
+* Store blog posts in a JavaScript array
+* Validate required fields
+* Return success and error responses
+* Test the API using Postman
+
+---
+
+## 🛠️ Tech Stack
+
+* Node.js
+* Express.js
+* JavaScript
+* Postman
+
+---
+
+## ▶️ Run the Project
+
+```bash
+npm install
+npm run dev
+```
+
+Server runs at:
+
+```text
+http://localhost:5000
+```
+
+---
+
+## 📌 API Endpoint
+
+### POST `/blogs`
+
+**Request Body**
+
+```json
+{
+  "title": "My First Blog",
+  "author": "Krutagna Patel",
+  "content": "Learning Express.js is fun!"
+}
+```
+
+**Success Response**
+
+```json
+{
+  "success": true,
+  "message": "Blog created successfully!"
+}
+```
+
+---
+
+## 📚 What I Learned
+
+* Creating REST APIs with Express.js
+* Handling POST requests
+* Validating request data
+* Storing data in a JavaScript array
+* Testing APIs using Postman
+
+---
+
+## 🎯 Outcome
+
+By the end of Day 6, I successfully created an API that accepts blog data, validates the input, and stores blog posts in a JavaScript array. This prepares the project for displaying, updating, and deleting blogs in the upcoming tasks.
+
+---
+
 ## 👨‍💻 Author
 
 **Krutagna Patel**
-
-Computer Engineering Student | Full Stack Developer
-
