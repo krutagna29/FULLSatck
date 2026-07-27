@@ -1,664 +1,259 @@
-#  DAY 1 Full Stack Environment Setup
+# BLOGDEN - Full Stack Blog Website
 
-## Overview
+A Full Stack Blog Website developed as part of a **14-Day Full Stack Development Internship** at **Codomax Digital Solutions**.
 
-This project is a beginner-friendly setup for learning Full Stack Development using **Node.js**, **Express.js**, **Git**, **GitHub**, **VS Code**, and **Postman**. It demonstrates how to initialize a Node.js project, install Express, and run a basic **Hello World** server.
-
----
-
-## Technologies Used
-
-* Node.js
-* Express.js
-* Git
-* GitHub
-* Visual Studio Code
-* Postman
+The project demonstrates the complete journey of building a blog application from frontend development to backend API integration using React.js and Express.js.
 
 ---
 
-## Prerequisites
+# Features
 
-Before running this project, make sure you have installed:
+## Frontend
+- Home Page
+- Add Blog Page
+- Responsive Navigation Bar
+- Footer
+- Responsive Design
+- Form Validation
+- Modern UI
 
-* Node.js (LTS)
-* Git
-* Visual Studio Code
-* Postman
-
-Verify the installations:
-
-```bash
-node -v
-npm -v
-git --version
-```
-
----
-
-### Navigate to the Project
-
-```bash
-cd fullstack
-```
-
-### Install Dependencies
-
-```bash
-npm install
-```
+## Backend
+- Express.js Server
+- GET API
+- POST API
+- Blog Creation API
+- JSON Request Handling
+- JavaScript Array Storage
+- Input Validation
 
 ---
 
-## Run the Application
+# Tech Stack
 
-Start the Express server:
+### Frontend
+- React.js
+- Vite
+- Bootstrap 5
+- CSS3
+- JavaScript (ES6)
 
-```bash
-node server.js
-```
+### Backend
+- Node.js
+- Express.js
 
-You should see:
-
-```text
-Server is running on http://localhost:5000
-```
-
-Open your browser and visit:
-
-```text
-http://localhost:5000
-```
-
-Response:
-
-```text
-Hello World!
-```
+### Tools
+- Git
+- GitHub
+- VS Code
+- Postman
+- Nodemon
 
 ---
 
-## Project Structure
+# Folder Structure
 
 ```text
 BLOGDEN/
 │
-├── node_modules/
-├── package.json
-├── package-lock.json
-├── server.js
-└── README.md
-```
-
----
-
-
-
-### GET /
-
-Returns a simple welcome message.
-
-**Response**
-
-```text
-Hello World!
-```
-
----
-
-## Learning Objectives
-
-* Set up a Node.js development environment
-* Initialize a Node.js project
-* Install and use Express.js
-* Create a basic web server
-* Test an application locally
-* Manage source code using Git and GitHub
-
----
-
-# Day 2 - Blog Website
-
-## 📖 About the Project
-
-This project is part of my Full Stack Development learning journey. On Day 2, I built the basic structure of a blog website using **React.js**. The main goal was to understand how React components work and how to navigate between pages using **React Router**.
-
-The application includes a **Home** page, an **Add Blog** page, a reusable **Navigation Bar**, and a **Footer** component.
-
----
-
-## 🚀 Features
-
-* Home page
-* Add Blog page
-* Navigation Bar
-* Footer
-
-
----
-
-## 🛠️ Tech Stack
-
-* React.js
-* Vite
-* React Router DOM
-
-
----
-
-## 📂 Project Structure
-
-```text
-blog/
+├── backend/
+│   ├── controllers/
+│   ├── data/
+│   ├── routes/
+│   ├── node_modules/
+│   ├── package.json
+│   ├── package-lock.json
+│   ├── server.js
+│   └── README.md
 │
-├── public/
-├── src/
-│   ├── assets/
-│   ├── components/
-│   │   ├── Navbar.jsx
-│   │   ├── Footer.jsx
-│   │   └── Layout.jsx
-│   ├── pages/
-│   │   ├── Home.jsx
-│   │   └── AddBlog.jsx
-│   ├── App.jsx
-│   ├── main.jsx
-│   └── index.css
-├── package.json
-└── README.md
-```
-
----
-
-## ⚙️ Getting Started
-
-Move into the project folder:
-
-```bash
-cd blog
-```
-
-Install the required packages:
-
-```bash
-npm install
-```
-
-Start the development server:
-
-```bash
-npm run dev
-```
-
-Open your browser and visit:
-
-```text
-http://localhost:5173
-```
-
----
-
-## 📚 What I Learned
-
-During this project, I learned how to:
-
-* Set up a React project using Vite
-* Create reusable React components
-* Use React Router for navigation
-* Organize a React project into components and pages
-* Build a simple multi-page application
-
----
-
-## 🎯 Project Outcome
-
-By the end of Day 2, I successfully created:
-
-* A Home page
-* An Add Blog page
-* A reusable Navigation Bar
-* A reusable Footer
-* Client-side routing with React Router
-* A clean and organized project structure
-
----
-
-
-# Day 3 – Styling the  Blog Website
-
-## 📖 About the Project
-
-Day 3 was focused on improving the look and feel of the React Blog website. After building the basic structure in the previous step, I used **CSS** and **Bootstrap 5** to create a clean, modern, and responsive user interface.
-
-The goal was to make the application visually appealing while keeping the design simple and easy to use.
-
----
-
-## 🚀 Features
-
-* Modern Navigation Bar
-* Attractive Hero Section
-* Styled Add Blog Form
-* Responsive Blog Cards
-* Custom Buttons
-* Footer Section
-* Mobile-Friendly Design
-
----
-
-## 🛠️ Tech Stack
-
-* React.js
-* Vite
-* Bootstrap 5
-* CSS3
-
----
-
-## 📂 Project Structure
-
-```text
-blog/
+├── blog/
+│   ├── public/
+│   ├── src/
+│   │   ├── assets/
+│   │   ├── components/
+│   │   ├── pages/
+│   │   ├── App.jsx
+│   │   ├── main.jsx
+│   │   └── index.css
+│   ├── package.json
+│   ├── vite.config.js
+│   └── README.md
 │
-├── public/
-├── src/
-│   ├── assets/
-│   ├── components/
-│   │   ├── Navbar.jsx
-│   │   ├── Footer.jsx
-│   │   └── Layout.jsx
-│   ├── pages/
-│   │   ├── Home.jsx
-│   │   └── AddBlog.jsx
-│   ├── App.jsx
-│   ├── main.jsx
-│   └── index.css
-├── package.json
 └── README.md
 ```
 
 ---
 
-## ⚙️ Getting Started
+# Installation
 
-
-
-Go to the project folder:
+## Clone Repository
 
 ```bash
-cd blog
+git clone <your-github-repository-url>
 ```
 
-Install dependencies:
-
-```bash
-npm install
-```
-
-Start the development server:
-
-```bash
-npm run dev
-```
-
-Open your browser and visit:
-
-```text
-http://localhost:5173
-```
-
----
-
-## 🎨 What I Styled
-
-During this stage, I worked on improving the overall design of the website by styling:
-
-* Navigation Bar
-* Hero Section
-* Blog Cards
-* Add Blog Form
-* Buttons
-* Footer
-* Responsive Layout for different screen sizes
-
----
-
-## 📚 What I Learned
-
-Through this project, I learned how to:
-
-* Write reusable CSS for React components
-* Combine Bootstrap with custom CSS
-* Build responsive layouts
-* Improve the user experience with clean UI design
-* Organize styles for better project structure
-
----
-
-## 🎯 Project Outcome
-
-By the end of Day 3, I successfully created:
-
-* A clean and responsive user interface
-* Professionally styled pages
-* Responsive blog cards
-* A modern blog submission form
-* Consistent styling across the application
-
-
-# Day 4 – Form Validation with Javascript
-
-## 📖 About the Project
-
-On Day 4, I added form validation to the **BlogDen** application to make the Add Blog page more interactive and user-friendly. Instead of allowing users to submit empty forms, I implemented client-side validation using React state and event handling.
-
-This task helped me understand how React manages form data and how to provide instant feedback when users enter invalid or incomplete information.
-
----
-
-## 🚀 Features
-
-* Add Blog form validation
-* Required field validation
-* Error messages for empty inputs
-* Form submission handling
-* Controlled form inputs using React
-* Improved user interaction
-
----
-
-## 🛠️ Technologies Used
-
-* React.js
-* JavaScript (ES6)
-* Vite
-* Bootstrap 5
-* CSS3
-
----
-
-## 📂 Project Structure
-
-```text
-BLOGDEN/
-│
-├── public/
-├── src/
-│   ├── assets/
-│   ├── components/
-│   ├── pages/
-│   │   ├── Home.jsx
-│   │   └── AddBlog.jsx
-│   ├── App.jsx
-│   ├── main.jsx
-│   └── index.css
-├── package.json
-└── README.md
-```
-
----
-
-## ▶️ Getting Started
-
-Navigate to the project folder:
+Move into the project folder.
 
 ```bash
 cd BLOGDEN
 ```
 
-Install the dependencies:
+---
+
+## Backend Setup
 
 ```bash
-npm install
-```
-
-Run the development server:
-
-```bash
-npm run dev
-```
-
-Open your browser:
-
-```text
-http://localhost:5173
-```
-
----
-
-## 💻 What I Implemented
-
-For this task, I enhanced the Add Blog page by:
-
-* Validating all required form fields
-* Preventing form submission if fields are empty
-* Displaying validation error messages
-* Handling form submission using React events
-* Clearing the form after a successful submission
-
----
-
-## 📚 What I Learned
-
-While working on this task, I learned how to:
-
-* Manage form data using `useState`
-* Handle user input with `onChange`
-* Validate form fields before submission
-* Handle form submission using `onSubmit`
-* Improve the user experience with instant feedback
-
----
-
-## 🎯 Outcome
-
-By the end of Day 4, I successfully created:
-
-* A fully functional Add Blog form
-* Client-side validation for required fields
-* Dynamic error messages
-* Better user interaction using React event handling
-* A smoother and more user-friendly form experience
-
-
-## # Day 5 – Express.js Backend Setup
-
-## 📖 About the Project
-
-On Day 5, I started building the backend for BlogDen using Node.js and Express.js. I created a basic Express server, added GET and POST routes, and tested the APIs with Postman. This was my first step toward connecting the frontend with a backend
-
----
-
-## 🚀 Features
-
-* Express.js server setup
-* GET route to return a welcome message
-* POST route to receive blog data
-* JSON request handling using Express middleware
-* Basic input validation
-* API testing with Postman
-
----
-
-## 🛠️ Technologies Used
-
-* Node.js
-* Express.js
-* JavaScript (ES6)
-* Postman
-* Nodemon
-
----
-
-## 📂 Project Structure
-
-```text
-BLOGDEN/
-│
-├── node_modules/
-├── package.json
-├── package-lock.json
-├── server.js
-└── README.md
-```
-
----
-
-## 💻 API Endpoints
-
-### GET /
-
-Returns a welcome message.
-
-**Response**
-
-```json
-{
-  "success": true,
-  "message": "Welcome to BlogDen API 🚀"
-}
-```
-
----
-
-### POST /blogs
-
-Receives blog details from the client.
-
-**Request Body**
-
-```json
-{
-  "title": "My First Blog",
-  "author": "Krutagna Patel",
-  "content": "Learning Express.js is fun!"
-}
-```
-
-**Response**
-
-```json
-{
-  "success": true,
-  "message": "Blog received successfully!",
-  "blog": {
-    "title": "My First Blog",
-    "author": "Krutagna Patel",
-    "content": "Learning Express.js is fun!"
-  }
-}
-```
-
----
-
-## 📚 What I Learned
-
-While working on this task, I learned how to:
-
-* Set up an Express.js server
-* Create GET and POST routes
-* Handle JSON data using middleware
-* Validate incoming request data
-* Test APIs with Postman
-* Understand the basics of client-server communication
-
----
-
-## 🎯 Outcome
-
-By the end of Day 5, I successfully:
-
-* Set up an Express.js backend server
-* Created GET and POST API routes
-* Added basic request validation
-* Tested the APIs successfully using Postman
-* Prepared the backend for future CRUD operations
-
-# Day 6 – Add Blog API
-
-## 📖 About
-
-On Day 6, I created an API to add new blog posts to **BlogDen**. Instead of using a database, I stored the blog data in a **JavaScript array**, which helped me understand how APIs receive and manage data before working with a database.
-
-I also added basic validation to ensure all required fields are provided before creating a blog post.
-
----
-
-## 🚀 Features
-
-* Create a new blog using a POST API
-* Store blog posts in a JavaScript array
-* Validate required fields
-* Return success and error responses
-* Test the API using Postman
-
----
-
-## 🛠️ Tech Stack
-
-* Node.js
-* Express.js
-* JavaScript
-* Postman
-
----
-
-## ▶️ Run the Project
-
-```bash
+cd backend
 npm install
 npm run dev
 ```
 
-Server runs at:
+Backend runs on:
 
-```text
+```
 http://localhost:5000
 ```
 
 ---
 
-## 📌 API Endpoint
+## Frontend Setup
 
-### POST `/blogs`
-
-**Request Body**
-
-```json
-{
-  "title": "My First Blog",
-  "author": "Krutagna Patel",
-  "content": "Learning Express.js is fun!"
-}
+```bash
+cd blog
+npm install
+npm run dev
 ```
 
-**Success Response**
+Frontend runs on:
 
-```json
-{
-  "success": true,
-  "message": "Blog created successfully!"
-}
+```
+http://localhost:5173
 ```
 
 ---
 
-## 📚 What I Learned
+# Development Journey
 
-* Creating REST APIs with Express.js
-* Handling POST requests
-* Validating request data
-* Storing data in a JavaScript array
-* Testing APIs using Postman
+## ✅ Day 1 – Environment Setup
+
+Completed:
+
+- Installed VS Code
+- Installed Node.js
+- Installed Git
+- Installed Postman
+- Initialized Node.js project
+- Installed Express.js
+- Created Hello World server
+
+Outcome:
+
+Successfully configured the development environment and ran the first Express server.
 
 ---
 
-## 🎯 Outcome
+## ✅ Day 2 – Blog Website Structure
 
-By the end of Day 6, I successfully created an API that accepts blog data, validates the input, and stores blog posts in a JavaScript array. This prepares the project for displaying, updating, and deleting blogs in the upcoming tasks.
+Completed:
+
+- Created Home Page
+- Created Add Blog Page
+- Added Navigation Bar
+- Added Footer
+- Configured React Router
+
+Outcome:
+
+Created the basic frontend structure of the blog application.
 
 ---
 
-## 👨‍💻 Author
+## ✅ Day 3 – UI Styling
+
+Completed:
+
+- Styled Navigation Bar
+- Styled Hero Section
+- Styled Blog Cards
+- Styled Add Blog Form
+- Styled Footer
+- Added Responsive Design
+
+Outcome:
+
+Developed a clean and responsive user interface.
+
+---
+
+## ✅ Day 4 – Form Validation
+
+Completed:
+
+- Added client-side validation
+- Displayed validation errors
+- Prevented empty submissions
+- Improved user interaction
+
+Outcome:
+
+Created a user-friendly blog submission form.
+
+---
+
+## ✅ Day 5 – Express.js Backend
+
+Completed:
+
+- Created Express Server
+- Implemented GET Route
+- Implemented POST Route
+- Added JSON Middleware
+- Tested APIs using Postman
+
+Outcome:
+
+Backend server successfully handles requests.
+
+---
+
+## ✅ Day 6 – Add Blog API
+
+Completed:
+
+- Created Blog API
+- Stored Blogs in JavaScript Array
+- Added Input Validation
+- Returned Success/Error Responses
+- Tested API using Postman
+
+Outcome:
+
+Users can create blog posts through the backend API.
+
+
+# Learning Outcomes
+
+Through this project I learned:
+
+- React.js Fundamentals
+- Component-Based Architecture
+- Routing with React Router
+- Responsive Design
+- JavaScript Form Validation
+- Express.js Development
+- REST API Development
+- API Testing with Postman
+- Git & GitHub Workflow
+- Full Stack Project Structure
+
+---
+
+
+---
+
+# Author
 
 **Krutagna Patel**
+
+Computer Engineering Student
+
+Full Stack Developer
