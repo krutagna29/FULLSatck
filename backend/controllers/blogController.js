@@ -27,6 +27,15 @@ const addBlog = (req, res) => {
   });
 };
 
+// Get All Blogs
+const getBlogs = (req, res) => {
+  res.status(200).json({
+    success: true,
+    blogs,
+  });
+};
+
 module.exports = {
   addBlog,
+  getBlogs,
 };

@@ -49,6 +49,14 @@ app.post("/blogs", (req, res) => {
   });
 });
 
+// Get All Blogs API
+app.get("/blogs", (req, res) => {
+  res.status(200).json({
+    success: true,
+    blogs,
+  });
+});
+
 // Start Server
 app.listen(PORT, () => {
   console.log(`🚀 Server running on http://localhost:${PORT}`);

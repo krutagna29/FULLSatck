@@ -1,4 +1,5 @@
 import { useState } from "react";
+import axios from "axios";
 
 function AddBlog() {
   const [formData, setFormData] = useState({
@@ -40,19 +41,23 @@ function AddBlog() {
     return newErrors;
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = async (e) => {
+  e.preventDefault();
 
-    const validationErrors = validate();
+  const validationErrors = validate();
 
-    if (Object.keys(validationErrors).length > 0) {
-      setErrors(validationErrors);
-      return;
-    }
+  if (Object.keys(validationErrors).length > 0) {
+    setErrors(validationErrors);
+    return;
+  }
 
-    alert("🎉 Blog submitted successfully!");
+  try {
+    const response = await axios.post(
+      "http://localhost:5000/blogs",
+      formData
+    );
 
-    console.log(formData);
+    alert(response.data.message);
 
     setFormData({
       title: "",
@@ -61,7 +66,14 @@ function AddBlog() {
     });
 
     setErrors({});
-  };
+  } catch (error) {
+    console.error(error);
+
+    alert(
+      error.response?.data?.message || "Something went wrong!"
+    );
+  }
+};
 
   return (
     <div className="container mt-5">

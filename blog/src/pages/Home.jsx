@@ -1,4 +1,22 @@
+import { useEffect, useState } from "react";
+import axios from "axios";
+
 function Home() {
+  const [blogs, setBlogs] = useState([]);
+
+  useEffect(() => {
+    fetchBlogs();
+  }, []);
+
+  const fetchBlogs = async () => {
+    try {
+      const res = await axios.get("http://localhost:5000/blogs");
+      setBlogs(res.data.blogs);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   return (
     <>
       <div className="hero">
@@ -7,29 +25,19 @@ function Home() {
       </div>
 
       <div className="row mt-5">
-        <div className="col-md-4">
-          <div className="blog-card">
-            <h3>Getting Started with React</h3>
-            <p>Learn the basics of React and component-based development.</p>
-            <small className="author">By Krutagna Patel</small>
-          </div>
-        </div>
-
-        <div className="col-md-4">
-          <div className="blog-card">
-            <h3>Why Learn Full Stack?</h3>
-            <p>Explore the benefits of becoming a full-stack developer.</p>
-            <small className="author">By Admin</small>
-          </div>
-        </div>
-
-        <div className="col-md-4">
-          <div className="blog-card">
-            <h3>CSS Tips</h3>
-            <p>Create modern, responsive user interfaces with CSS.</p>
-            <small className="author">By Guest</small>
-          </div>
-        </div>
+        {blogs.length === 0 ? (
+          <h4 className="text-center">No blogs available.</h4>
+        ) : (
+          blogs.map((blog) => (
+            <div className="col-md-4 mb-4" key={blog.id}>
+              <div className="blog-card">
+                <h3>{blog.title}</h3>
+                <p>{blog.content}</p>
+                <small className="author">By {blog.author}</small>
+              </div>
+            </div>
+          ))
+        )}
       </div>
     </>
   );
