@@ -246,14 +246,71 @@ Through this project I learned:
 - Full Stack Project Structure
 
 ---
+---
 
+# Day 7 – View Blogs API
+
+## 📖 About
+
+On Day 7, I developed the **View Blogs API** for **BLOGDEN** using **Node.js** and **Express.js**. This API retrieves all blog posts stored in a JavaScript array and returns them in JSON format.
 
 ---
 
-# Author
+## 🚀 Features
+
+- GET API to fetch all blog posts
+- Returns JSON responses
+- Retrieves data from a JavaScript array
+- Tested using Postman
+
+---
+
+## 🛠️ Tech Stack
+
+- Node.js
+- Express.js
+- JavaScript
+- Postman
+
+---
+
+
+## 📌 API Endpoint
+
+### GET `/blogs`
+
+**Response**
+
+```json
+{
+  "success": true,
+  "blogs": [
+    {
+      "title": "My First Blog",
+      "author": "Krutagna Patel",
+      "content": "Learning Express.js is fun!"
+    }
+  ]
+}
+```
+
+---
+
+## 📚 What I Learned
+
+- Creating GET APIs with Express.js
+- Returning JSON responses
+- Fetching data from a JavaScript array
+- Testing APIs using Postman
+
+---
+
+## 🎯 Outcome
+
+Successfully created a **View Blogs API** that retrieves and returns all blog posts, preparing the backend for complete CRUD operations.
+
+---
+
+## 👨‍💻 Author
 
 **Krutagna Patel**
-
-Computer Engineering Student
-
-Full Stack Developer
