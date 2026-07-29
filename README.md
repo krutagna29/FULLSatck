@@ -252,102 +252,26 @@ Users can successfully view all blog posts through the backend API.
 
 ---
 
-# 📚 Learning Outcomes
+---
 
-Through this project, I learned:
+## ✅ Day 8 – Edit Blog API
 
-- React.js Fundamentals
-- Component-Based Development
-- React Router
-- Responsive UI Design
-- Bootstrap 5
-- JavaScript Form Validation
-- Express.js Server Setup
-- REST API Development
-- Creating GET & POST APIs
-- Working with JSON Data
-- API Testing using Postman
-- Git & GitHub Workflow
-- Full Stack Project Structure
+### Completed
+
+- Created PUT API to update existing blog posts
+- Displayed all blogs for editing
+- Added pre-filled edit form
+- Updated blog title, author, and content
+- Added form validation
+- Tested API using Postman
+
+### Outcome
+
+Users can successfully edit existing blog posts, completing the **Update** operation of CRUD.
 
 ---
 
-# 🚀 Upcoming Tasks
 
-- Day 8 – Edit Blog API
-- Day 9 – Delete Blog API
-- Day 10 – Frontend Integration
-- Day 11 – Animations & UI Enhancements
-- Day 12 – GitHub Deployment
-- Day 13 – Testing & Performance Optimization
-- Day 14 – Final Project Submission
-
----
-
-# 🔮 Future Enhancements
-
-- MongoDB Integration
-- User Authentication
-- Blog Categories
-- Search Functionality
-- Image Upload
-- Comments System
-- User Dashboard
-- Admin Panel
-- Deployment on Vercel & Render
-
----
-
-# Day 8 – Edit Blog
-
-## 📖 About the Project
-
-Day 8 focused on implementing the **Edit Blog** feature in the BlogDen application. After completing the Add Blog and View Blogs functionality, I added the ability to update existing blog posts.
-
-Users can open the **Edit Blog** page, view all available blogs, select a blog to edit, update its details, and save the changes. The frontend communicates with the Express.js backend using a **PUT API**, and the updated blog is stored in a JavaScript array.
-
-This task helped me understand the **Update (CRUD)** operation and how React interacts with backend APIs.
-
----
-
-## 🚀 Features
-
-- View all existing blogs
-- Select a blog to edit
-- Pre-filled edit form
-- Update blog title, author, and content
-- Form validation
-- Express.js PUT API integration
-- Updated blogs displayed instantly
-
----
-
-## 📚 What I Learned
-
-During this task, I learned how to:
-
-- Build an Update API using Express.js
-- Perform CRUD Update operations
-- Fetch blog data from the backend
-- Pre-fill forms with existing data
-- Send PUT requests using Axios
-- Manage React state while editing data
-- Connect the frontend with backend APIs
-
----
-
-## 🎯 Project Outcome
-
-By the end of Day 8, I successfully implemented:
-
-- Functional Edit Blog page
-- Blog update functionality
-- Dynamic data loading
-- Working PUT API
-- Responsive edit form
-- Better user experience for managing blogs
-
----
 # 👨‍💻 Author
 
 **Krutagna Patel**
