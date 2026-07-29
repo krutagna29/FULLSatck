@@ -35,7 +35,34 @@ const getBlogs = (req, res) => {
   });
 };
 
+// Update Blog
+const updateBlog = (req, res) => {
+  const id = Number(req.params.id);
+
+  const blog = blogs.find((blog) => blog.id === id);
+
+  if (!blog) {
+    return res.status(404).json({
+      success: false,
+      message: "Blog not found.",
+    });
+  }
+
+  const { title, author, content } = req.body;
+
+  blog.title = title || blog.title;
+  blog.author = author || blog.author;
+  blog.content = content || blog.content;
+
+  res.status(200).json({
+    success: true,
+    message: "Blog updated successfully!",
+    blog,
+  });
+};
+
 module.exports = {
   addBlog,
   getBlogs,
+  updateBlog,
 };

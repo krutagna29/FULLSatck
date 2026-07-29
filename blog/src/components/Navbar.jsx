@@ -1,21 +1,42 @@
-    import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container">
-        <Link className="navbar-brand" to="/">
-          React Den
+        <Link className="navbar-brand fw-bold" to="/">
+          BlogDen
         </Link>
 
-        <div className="navbar-nav ms-auto">
-          <Link className="nav-link" to="/">
-            Home
-          </Link>
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbar"
+        >
+          <span className="navbar-toggler-icon"></span>
+        </button>
 
-          <Link className="nav-link" to="/add-blog">
-            Add Blog
-          </Link>
+        <div className="collapse navbar-collapse" id="navbar">
+          <ul className="navbar-nav ms-auto">
+            <li className="nav-item">
+              <Link className="nav-link" to="/">
+                Home
+              </Link>
+            </li>
+
+            <li className="nav-item">
+              <Link className="nav-link" to="/add-blog">
+                Add Blog
+              </Link>
+            </li>
+
+            <li className="nav-item">
+              <Link className="nav-link" to="/edit-blog">
+                Edit Blog
+              </Link>
+            </li>
+          </ul>
         </div>
       </div>
     </nav>
