@@ -77,6 +77,36 @@ function EditBlog() {
     }
   };
 
+  const handleDelete = async (id) => {
+  const confirmDelete = window.confirm(
+    "Are you sure you want to delete this blog?"
+  );
+
+  if (!confirmDelete) return;
+
+  try {
+    await axios.delete(`http://localhost:5000/blogs/${id}`);
+
+    alert("Blog deleted successfully!");
+
+    // Clear form if deleted blog was selected
+    if (selectedId === id) {
+      setSelectedId(null);
+
+      setFormData({
+        title: "",
+        author: "",
+        content: "",
+      });
+    }
+
+    fetchBlogs();
+  } catch (err) {
+    console.log(err);
+    alert("Failed to delete blog.");
+  }
+};
+
   return (
     <div className="container py-5">
 
@@ -175,12 +205,21 @@ function EditBlog() {
 
                   <br />
 
-                  <button
-                    className="btn btn-warning mt-3"
-                    onClick={() => handleEdit(blog)}
-                  >
-                    Edit
-                  </button>
+                 <div className="mt-3 d-flex gap-2">
+  <button
+    className="btn btn-warning"
+    onClick={() => handleEdit(blog)}
+  >
+    Edit
+  </button>
+
+  <button
+    className="btn btn-danger"
+    onClick={() => handleDelete(blog.id)}
+  >
+    Delete
+  </button>
+</div>
 
                 </div>
 

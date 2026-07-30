@@ -271,6 +271,22 @@ Users can successfully edit existing blog posts, completing the **Update** opera
 
 ---
 
+---
+
+## ✅ Day 9 – Delete Blog API
+
+### Completed
+
+- Created DELETE API to remove blog posts
+- Deleted blogs using their unique ID
+- Returned appropriate success and error responses
+- Tested the API using Postman
+
+### Outcome
+
+Users can successfully delete blog posts, completing the **Delete** operation of CRUD.
+
+---
 
 # 👨‍💻 Author
 

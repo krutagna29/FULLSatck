@@ -61,8 +61,32 @@ const updateBlog = (req, res) => {
   });
 };
 
+// Delete Blog
+const deleteBlog = (req, res) => {
+  const id = Number(req.params.id);
+
+  const index = blogs.findIndex((blog) => blog.id === id);
+
+  if (index === -1) {
+    return res.status(404).json({
+      success: false,
+      message: "Blog not found.",
+    });
+  }
+
+  const deletedBlog = blogs.splice(index, 1);
+
+  res.status(200).json({
+    success: true,
+    message: "Blog deleted successfully!",
+    blog: deletedBlog[0],
+  });
+};
+
+
 module.exports = {
   addBlog,
   getBlogs,
   updateBlog,
+  deleteBlog,
 };
