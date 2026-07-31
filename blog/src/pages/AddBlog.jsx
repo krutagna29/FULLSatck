@@ -1,7 +1,10 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 function AddBlog() {
+  const navigate = useNavigate();
+
   const [formData, setFormData] = useState({
     title: "",
     author: "",
@@ -16,7 +19,6 @@ function AddBlog() {
       [e.target.name]: e.target.value,
     });
 
-    // Remove error while typing
     setErrors({
       ...errors,
       [e.target.name]: "",
@@ -42,48 +44,50 @@ function AddBlog() {
   };
 
   const handleSubmit = async (e) => {
-  e.preventDefault();
+    e.preventDefault();
 
-  const validationErrors = validate();
+    const validationErrors = validate();
 
-  if (Object.keys(validationErrors).length > 0) {
-    setErrors(validationErrors);
-    return;
-  }
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors);
+      return;
+    }
 
-  try {
-    const response = await axios.post(
-      "http://localhost:5000/blogs",
-      formData
-    );
+    try {
+      const response = await axios.post(
+        "http://localhost:5000/blogs",
+        formData
+      );
 
-    alert(response.data.message);
+      alert(response.data.message);
 
-    setFormData({
-      title: "",
-      author: "",
-      content: "",
-    });
+      setFormData({
+        title: "",
+        author: "",
+        content: "",
+      });
 
-    setErrors({});
-  } catch (error) {
-    console.error(error);
+      setErrors({});
 
-    alert(
-      error.response?.data?.message || "Something went wrong!"
-    );
-  }
-};
+      // Redirect to Home page
+      navigate("/");
+    } catch (error) {
+      console.error(error);
+
+      alert(
+        error.response?.data?.message || "Something went wrong!"
+      );
+    }
+  };
 
   return (
     <div className="container mt-5">
       <div className="card shadow p-4">
-        <h2 className="mb-4 text-center">Add New Blog</h2>
+        <h2 className="text-center mb-4">Add New Blog</h2>
 
         <form onSubmit={handleSubmit}>
           <div className="mb-3">
             <label className="form-label">Blog Title</label>
-
             <input
               type="text"
               name="title"
@@ -92,7 +96,6 @@ function AddBlog() {
               value={formData.title}
               onChange={handleChange}
             />
-
             {errors.title && (
               <small className="text-danger">{errors.title}</small>
             )}
@@ -100,7 +103,6 @@ function AddBlog() {
 
           <div className="mb-3">
             <label className="form-label">Author Name</label>
-
             <input
               type="text"
               name="author"
@@ -109,7 +111,6 @@ function AddBlog() {
               value={formData.author}
               onChange={handleChange}
             />
-
             {errors.author && (
               <small className="text-danger">{errors.author}</small>
             )}
@@ -117,7 +118,6 @@ function AddBlog() {
 
           <div className="mb-3">
             <label className="form-label">Blog Content</label>
-
             <textarea
               name="content"
               rows="5"
@@ -126,7 +126,6 @@ function AddBlog() {
               value={formData.content}
               onChange={handleChange}
             ></textarea>
-
             {errors.content && (
               <small className="text-danger">{errors.content}</small>
             )}

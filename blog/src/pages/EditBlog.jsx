@@ -3,6 +3,7 @@ import axios from "axios";
 
 function EditBlog() {
   const [blogs, setBlogs] = useState([]);
+  const [loading, setLoading] = useState(true);
   const [selectedId, setSelectedId] = useState(null);
 
   const [formData, setFormData] = useState({
@@ -20,7 +21,9 @@ function EditBlog() {
       const res = await axios.get("http://localhost:5000/blogs");
       setBlogs(res.data.blogs);
     } catch (err) {
-      console.log(err);
+      console.error(err);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -54,13 +57,22 @@ function EditBlog() {
       return;
     }
 
+    if (
+      !formData.title.trim() ||
+      !formData.author.trim() ||
+      !formData.content.trim()
+    ) {
+      alert("Please fill in all fields.");
+      return;
+    }
+
     try {
-      await axios.put(
+      const res = await axios.put(
         `http://localhost:5000/blogs/${selectedId}`,
         formData
       );
 
-      alert("Blog updated successfully!");
+      alert(res.data.message);
 
       setSelectedId(null);
 
@@ -72,164 +84,143 @@ function EditBlog() {
 
       fetchBlogs();
     } catch (err) {
-      console.log(err);
+      console.error(err);
       alert("Failed to update blog.");
     }
   };
 
   const handleDelete = async (id) => {
-  const confirmDelete = window.confirm(
-    "Are you sure you want to delete this blog?"
-  );
+    const confirmDelete = window.confirm(
+      "Are you sure you want to delete this blog?"
+    );
 
-  if (!confirmDelete) return;
+    if (!confirmDelete) return;
 
-  try {
-    await axios.delete(`http://localhost:5000/blogs/${id}`);
+    try {
+      const res = await axios.delete(
+        `http://localhost:5000/blogs/${id}`
+      );
 
-    alert("Blog deleted successfully!");
+      alert(res.data.message);
 
-    // Clear form if deleted blog was selected
-    if (selectedId === id) {
-      setSelectedId(null);
+      if (selectedId === id) {
+        setSelectedId(null);
 
-      setFormData({
-        title: "",
-        author: "",
-        content: "",
-      });
+        setFormData({
+          title: "",
+          author: "",
+          content: "",
+        });
+      }
+
+      fetchBlogs();
+    } catch (err) {
+      console.error(err);
+      alert("Failed to delete blog.");
     }
-
-    fetchBlogs();
-  } catch (err) {
-    console.log(err);
-    alert("Failed to delete blog.");
-  }
-};
+  };
 
   return (
     <div className="container py-5">
-
-      <h2 className="text-center mb-4">
-        Edit Blog
-      </h2>
-
-      {/* Edit Form */}
+      <h2 className="text-center mb-4">Edit Blog</h2>
 
       <div className="card shadow mb-5">
         <div className="card-body">
-
           <form onSubmit={handleUpdate}>
-
             <div className="mb-3">
-              <label className="form-label">
-                Blog Title
-              </label>
+              <label className="form-label">Blog Title</label>
 
               <input
                 type="text"
-                name="title"
                 className="form-control"
+                name="title"
                 value={formData.title}
                 onChange={handleChange}
               />
             </div>
 
             <div className="mb-3">
-              <label className="form-label">
-                Author
-              </label>
+              <label className="form-label">Author</label>
 
               <input
                 type="text"
-                name="author"
                 className="form-control"
+                name="author"
                 value={formData.author}
                 onChange={handleChange}
               />
             </div>
 
             <div className="mb-3">
-              <label className="form-label">
-                Content
-              </label>
+              <label className="form-label">Content</label>
 
               <textarea
                 rows="5"
-                name="content"
                 className="form-control"
+                name="content"
                 value={formData.content}
                 onChange={handleChange}
-              />
+              ></textarea>
             </div>
 
             <button
-              type="submit"
               className="btn btn-success w-100"
+              type="submit"
             >
               Update Blog
             </button>
-
           </form>
-
         </div>
       </div>
 
       <h3 className="mb-4">Available Blogs</h3>
 
-      <div className="row">
-
-        {blogs.length === 0 ? (
-          <h5 className="text-center">
-            No blogs available.
-          </h5>
-        ) : (
-          blogs.map((blog) => (
+      {loading ? (
+        <h5 className="text-center">Loading blogs...</h5>
+      ) : blogs.length === 0 ? (
+        <h5 className="text-center">No blogs available.</h5>
+      ) : (
+        <div className="row">
+          {blogs.map((blog) => (
             <div
               className="col-md-4 mb-4"
               key={blog.id}
             >
               <div className="card shadow-sm h-100">
-
                 <div className="card-body">
-
                   <h4>{blog.title}</h4>
 
                   <p>
-                    {blog.content}
+                    {blog.content.length > 120
+                      ? blog.content.substring(0, 120) + "..."
+                      : blog.content}
                   </p>
 
                   <small className="text-muted">
                     By {blog.author}
                   </small>
 
-                  <br />
+                  <div className="mt-3 d-flex gap-2">
+                    <button
+                      className="btn btn-warning"
+                      onClick={() => handleEdit(blog)}
+                    >
+                      Edit
+                    </button>
 
-                 <div className="mt-3 d-flex gap-2">
-  <button
-    className="btn btn-warning"
-    onClick={() => handleEdit(blog)}
-  >
-    Edit
-  </button>
-
-  <button
-    className="btn btn-danger"
-    onClick={() => handleDelete(blog.id)}
-  >
-    Delete
-  </button>
-</div>
-
+                    <button
+                      className="btn btn-danger"
+                      onClick={() => handleDelete(blog.id)}
+                    >
+                      Delete
+                    </button>
+                  </div>
                 </div>
-
               </div>
             </div>
-          ))
-        )}
-
-      </div>
-
+          ))}
+        </div>
+      )}
     </div>
   );
 }

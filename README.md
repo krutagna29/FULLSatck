@@ -288,6 +288,24 @@ Users can successfully delete blog posts, completing the **Delete** operation of
 
 ---
 
+---
+
+## ✅ Day 10 – Frontend Integration
+
+### Completed
+
+- Connected React frontend with Express.js backend
+- Integrated GET, POST, PUT, and DELETE APIs using Axios/Fetch
+- Displayed blog data dynamically
+- Added create, edit, and delete functionality from the UI
+- Tested complete frontend-backend communication
+
+### Outcome
+
+Successfully integrated the frontend with the backend, enabling complete CRUD operations through the user interface.
+
+---
+
 # 👨‍💻 Author
 
 **Krutagna Patel**

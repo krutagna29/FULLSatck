@@ -3,19 +3,22 @@ import axios from "axios";
 
 function Home() {
   const [blogs, setBlogs] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  const fetchBlogs = async () => {
+    try {
+      const response = await axios.get("http://localhost:5000/blogs");
+      setBlogs(response.data.blogs);
+    } catch (error) {
+      console.error("Error fetching blogs:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   useEffect(() => {
     fetchBlogs();
   }, []);
-
-  const fetchBlogs = async () => {
-    try {
-      const res = await axios.get("http://localhost:5000/blogs");
-      setBlogs(res.data.blogs);
-    } catch (error) {
-      console.error("Error fetching blogs:", error);
-    }
-  };
 
   return (
     <div className="container py-5">
@@ -28,16 +31,20 @@ function Home() {
       </div>
 
       {/* Blog List */}
-      <div className="row">
-        {blogs.length === 0 ? (
-          <div className="text-center">
-            <h4>No blogs available.</h4>
-            <p className="text-muted">
-              Add your first blog from the Add Blog page.
-            </p>
-          </div>
-        ) : (
-          blogs.map((blog) => (
+      {loading ? (
+        <div className="text-center">
+          <h5>Loading blogs...</h5>
+        </div>
+      ) : blogs.length === 0 ? (
+        <div className="text-center">
+          <h4>No blogs available.</h4>
+          <p className="text-muted">
+            Add your first blog from the Add Blog page.
+          </p>
+        </div>
+      ) : (
+        <div className="row">
+          {blogs.map((blog) => (
             <div className="col-md-4 mb-4" key={blog.id}>
               <div className="card shadow-sm h-100">
                 <div className="card-body">
@@ -57,9 +64,9 @@ function Home() {
                 </div>
               </div>
             </div>
-          ))
-        )}
-      </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 }
