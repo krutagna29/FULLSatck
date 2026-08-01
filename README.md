@@ -306,6 +306,27 @@ Successfully integrated the frontend with the backend, enabling complete CRUD op
 
 ---
 
+# 📅 Day 11 – UI Enhancements
+
+## 📌 Task
+Add animations, transitions, hover effects, and smooth scrolling.
+
+## ✅ Completed
+
+- Added smooth scrolling across the website.
+- Added fade-in animations for the Hero section and blog cards.
+- Applied hover effects to blog cards, buttons, and navigation links.
+- Added transition effects for forms, buttons, and cards.
+- Improved input focus styling for a better user experience.
+- Enhanced the overall UI with responsive and interactive animations.
+
+
+## 🎯 Outcome
+
+Successfully enhanced the BlogDen user interface with animations, smooth transitions, hover effects, and smooth scrolling, making the application more modern and interactive.
+
+---
+
 # 👨‍💻 Author
 
 **Krutagna Patel**

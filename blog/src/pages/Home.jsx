@@ -46,7 +46,7 @@ function Home() {
         <div className="row">
           {blogs.map((blog) => (
             <div className="col-md-4 mb-4" key={blog.id}>
-              <div className="card shadow-sm h-100">
+              <div className="card shadow-sm h-100 animate-card">
                 <div className="card-body">
                   <h4 className="card-title">{blog.title}</h4>
 
