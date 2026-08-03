@@ -55,7 +55,7 @@ function AddBlog() {
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/blogs",
+        "https://blogden-qg1k.onrender.com/blogs",
         formData
       );
 

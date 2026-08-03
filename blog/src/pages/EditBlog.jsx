@@ -18,7 +18,7 @@ function EditBlog() {
 
   const fetchBlogs = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/blogs");
+      const res = await axios.get("https://blogden-qg1k.onrender.com/blogs");
       setBlogs(res.data.blogs);
     } catch (err) {
       console.error(err);
@@ -68,7 +68,7 @@ function EditBlog() {
 
     try {
       const res = await axios.put(
-        `http://localhost:5000/blogs/${selectedId}`,
+        `https://blogden-qg1k.onrender.com/blogs/${selectedId}`,
         formData
       );
 
@@ -98,7 +98,7 @@ function EditBlog() {
 
     try {
       const res = await axios.delete(
-        `http://localhost:5000/blogs/${id}`
+        `https://blogden-qg1k.onrender.com/blogs/${id}`
       );
 
       alert(res.data.message);
