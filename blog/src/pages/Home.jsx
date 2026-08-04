@@ -1,13 +1,15 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 
+
 function Home() {
   const [blogs, setBlogs] = useState([]);
   const [loading, setLoading] = useState(true);
+  const API = import.meta.env.VITE_API_URL;
 
   const fetchBlogs = async () => {
     try {
-      const response = await axios.get("https://blogden-qg1k.onrender.com/blogs");
+      const response = await axios.get(`${API}/blogs`);
       setBlogs(response.data.blogs);
     } catch (error) {
       console.error("Error fetching blogs:", error);

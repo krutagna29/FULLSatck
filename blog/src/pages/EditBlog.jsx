@@ -1,10 +1,12 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import api from "../api";
 
 function EditBlog() {
   const [blogs, setBlogs] = useState([]);
   const [loading, setLoading] = useState(true);
   const [selectedId, setSelectedId] = useState(null);
+  const API = import.meta.env.VITE_API_URL;
 
   const [formData, setFormData] = useState({
     title: "",
@@ -18,7 +20,7 @@ function EditBlog() {
 
   const fetchBlogs = async () => {
     try {
-      const res = await axios.get("https://blogden-qg1k.onrender.com/blogs");
+      const res = await axios.get(`${API}/blogs`);
       setBlogs(res.data.blogs);
     } catch (err) {
       console.error(err);
@@ -68,9 +70,9 @@ function EditBlog() {
 
     try {
       const res = await axios.put(
-        `https://blogden-qg1k.onrender.com/blogs/${selectedId}`,
-        formData
-      );
+  `${API}/blogs/${selectedId}`,
+  formData
+);
 
       alert(res.data.message);
 
@@ -97,9 +99,8 @@ function EditBlog() {
     if (!confirmDelete) return;
 
     try {
-      const res = await axios.delete(
-        `https://blogden-qg1k.onrender.com/blogs/${id}`
-      );
+      const res = await axios.delete(`${API}/blogs/${id}`
+);
 
       alert(res.data.message);
 

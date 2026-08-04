@@ -2,8 +2,10 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
+
 function AddBlog() {
   const navigate = useNavigate();
+  const API = import.meta.env.VITE_API_URL;
 
   const [formData, setFormData] = useState({
     title: "",
@@ -54,10 +56,7 @@ function AddBlog() {
     }
 
     try {
-      const response = await axios.post(
-        "https://blogden-qg1k.onrender.com/blogs",
-        formData
-      );
+      const response = await axios.post(`${API}/blogs`, formData);
 
       alert(response.data.message);
 

@@ -327,6 +327,25 @@ Successfully enhanced the BlogDen user interface with animations, smooth transit
 
 ---
 
+---
+
+## ✅ Day 12 – Project Deployment & Live Hosting
+
+### Completed
+
+- Deployed the React (Vite) frontend on Vercel
+- Deployed the Express.js backend on Render
+- Connected the frontend with the live backend API
+- Replaced local API URLs with the deployed backend URL
+- Verified Create, Read, Update, and Delete (CRUD) operations using the live API
+- Fixed deployment issues related to Vite, dependencies, CORS, and backend configuration
+
+### Outcome
+
+Successfully deployed the **BLOGDEN** application with a live frontend and backend. The project is now accessible online with fully functional CRUD operations.
+
+---
+
 # 👨‍💻 Author
 
 **Krutagna Patel**
