@@ -1,16 +1,8 @@
 import { Link } from "react-router-dom";
 
 function Navbar() {
-  const closeNavbar = () => {
-    const navbar = document.getElementById("navbar");
-
-    if (navbar.classList.contains("show")) {
-      navbar.classList.remove("show");
-    }
-  };
-
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container">
         <Link className="navbar-brand fw-bold" to="/">
           BlogDen
@@ -21,9 +13,6 @@ function Navbar() {
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbar"
-          aria-controls="navbar"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
         >
           <span className="navbar-toggler-icon"></span>
         </button>
@@ -31,19 +20,19 @@ function Navbar() {
         <div className="collapse navbar-collapse" id="navbar">
           <ul className="navbar-nav ms-auto">
             <li className="nav-item">
-              <Link className="nav-link" to="/" onClick={closeNavbar}>
+              <Link className="nav-link" to="/">
                 Home
               </Link>
             </li>
 
             <li className="nav-item">
-              <Link className="nav-link" to="/add-blog" onClick={closeNavbar}>
+              <Link className="nav-link" to="/add-blog">
                 Add Blog
               </Link>
             </li>
 
             <li className="nav-item">
-              <Link className="nav-link" to="/edit-blog" onClick={closeNavbar}>
+              <Link className="nav-link" to="/edit-blog">
                 Edit Blog
               </Link>
             </li>
