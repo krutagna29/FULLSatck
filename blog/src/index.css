@@ -17,7 +17,34 @@ html {
 body {
   background: #f5f7fb;
   color: #333;
+  min-height: 100vh;
+  overflow-x: hidden;
   animation: fadeIn 0.8s ease;
+}
+
+.container {
+  max-width: 1200px;
+}
+
+/* =========================
+   Scrollbar
+========================= */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #0d6efd;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #084298;
 }
 
 /* =========================
@@ -64,6 +91,18 @@ body {
 
 .nav-link:hover::after {
   width: 100%;
+}
+
+.navbar-toggler {
+  border: none;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+
+.navbar-collapse {
+  transition: all 0.3s ease;
 }
 
 /* =========================
@@ -125,7 +164,11 @@ body {
 .form-control:focus {
   border-color: #0d6efd;
   box-shadow: 0 0 12px rgba(13, 110, 253, 0.25);
-  transform: scale(1.01);
+}
+
+textarea {
+  resize: vertical;
+  min-height: 150px;
 }
 
 /* =========================
@@ -141,6 +184,13 @@ body {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
+.btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
 .btn-primary,
 .btn-success,
 .btn-warning,
@@ -153,26 +203,27 @@ body {
    Blog Cards
 ========================= */
 
-.blog-card,
-.card {
+.card,
+.blog-card {
   transition: all 0.3s ease;
+  overflow: hidden;
 }
 
-.blog-card:hover,
-.card:hover {
-  transform: translateY(-8px) scale(1.02);
+.card:hover,
+.blog-card:hover {
+  transform: translateY(-6px);
   box-shadow: 0 18px 35px rgba(0, 0, 0, 0.18);
 }
 
-.blog-card h3,
 .card-title,
+.blog-card h3,
 .card h4 {
   color: #0d6efd;
   font-weight: 600;
 }
 
-.blog-card p,
-.card-text {
+.card-text,
+.blog-card p {
   color: #555;
   margin: 10px 0;
 }
@@ -183,16 +234,23 @@ body {
 }
 
 /* =========================
+   Loading
+========================= */
+
+.loading {
+  animation: fadeIn 0.6s ease;
+}
+
+/* =========================
    Footer
 ========================= */
 
 footer {
   background: #212529;
-  color: white;
+  color: #fff;
   text-align: center;
   padding: 20px;
   margin-top: 60px;
-  transition: all 0.3s ease;
 }
 
 footer:hover {
@@ -266,5 +324,20 @@ footer:hover {
   .btn {
     width: 100%;
     margin-bottom: 10px;
+  }
+
+  .d-flex.gap-2 {
+    flex-direction: column;
+  }
+
+  .navbar-collapse {
+    background: #0d6efd;
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 10px;
+  }
+
+  .nav-link {
+    padding: 10px 0;
   }
 }

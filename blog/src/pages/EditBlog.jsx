@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-
 function EditBlog() {
+  const API = import.meta.env.VITE_API_URL;
+
   const [blogs, setBlogs] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [saving, setSaving] = useState(false);
   const [selectedId, setSelectedId] = useState(null);
-  const API = import.meta.env.VITE_API_URL;
 
   const [formData, setFormData] = useState({
     title: "",
@@ -24,6 +25,7 @@ function EditBlog() {
       setBlogs(res.data.blogs);
     } catch (err) {
       console.error(err);
+      alert("Failed to fetch blogs.");
     } finally {
       setLoading(false);
     }
@@ -69,10 +71,12 @@ function EditBlog() {
     }
 
     try {
+      setSaving(true);
+
       const res = await axios.put(
-  `${API}/blogs/${selectedId}`,
-  formData
-);
+        `${API}/blogs/${selectedId}`,
+        formData
+      );
 
       alert(res.data.message);
 
@@ -88,19 +92,20 @@ function EditBlog() {
     } catch (err) {
       console.error(err);
       alert("Failed to update blog.");
+    } finally {
+      setSaving(false);
     }
   };
 
   const handleDelete = async (id) => {
-    const confirmDelete = window.confirm(
-      "Are you sure you want to delete this blog?"
-    );
-
-    if (!confirmDelete) return;
+    if (!window.confirm("Are you sure you want to delete this blog?")) {
+      return;
+    }
 
     try {
-      const res = await axios.delete(`${API}/blogs/${id}`
-);
+      setSaving(true);
+
+      const res = await axios.delete(`${API}/blogs/${id}`);
 
       alert(res.data.message);
 
@@ -118,6 +123,8 @@ function EditBlog() {
     } catch (err) {
       console.error(err);
       alert("Failed to delete blog.");
+    } finally {
+      setSaving(false);
     }
   };
 
@@ -127,7 +134,7 @@ function EditBlog() {
 
       <div className="card shadow mb-5">
         <div className="card-body">
-          <form onSubmit={handleUpdate}>
+          <form onSubmit={handleUpdate} autoComplete="off">
             <div className="mb-3">
               <label className="form-label">Blog Title</label>
 
@@ -137,6 +144,7 @@ function EditBlog() {
                 name="title"
                 value={formData.title}
                 onChange={handleChange}
+                maxLength={100}
               />
             </div>
 
@@ -149,6 +157,7 @@ function EditBlog() {
                 name="author"
                 value={formData.author}
                 onChange={handleChange}
+                maxLength={50}
               />
             </div>
 
@@ -161,14 +170,16 @@ function EditBlog() {
                 name="content"
                 value={formData.content}
                 onChange={handleChange}
+                maxLength={2000}
               ></textarea>
             </div>
 
             <button
               className="btn btn-success w-100"
               type="submit"
+              disabled={!selectedId || saving}
             >
-              Update Blog
+              {saving ? "Updating..." : "Update Blog"}
             </button>
           </form>
         </div>
@@ -183,17 +194,14 @@ function EditBlog() {
       ) : (
         <div className="row">
           {blogs.map((blog) => (
-            <div
-              className="col-md-4 mb-4"
-              key={blog.id}
-            >
+            <div className="col-md-4 mb-4" key={blog.id}>
               <div className="card shadow-sm h-100">
                 <div className="card-body">
                   <h4>{blog.title}</h4>
 
                   <p>
                     {blog.content.length > 120
-                      ? blog.content.substring(0, 120) + "..."
+                      ? `${blog.content.substring(0, 120)}...`
                       : blog.content}
                   </p>
 
@@ -205,6 +213,7 @@ function EditBlog() {
                     <button
                       className="btn btn-warning"
                       onClick={() => handleEdit(blog)}
+                      disabled={saving}
                     >
                       Edit
                     </button>
@@ -212,6 +221,7 @@ function EditBlog() {
                     <button
                       className="btn btn-danger"
                       onClick={() => handleDelete(blog.id)}
+                      disabled={saving}
                     >
                       Delete
                     </button>

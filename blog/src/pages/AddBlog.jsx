@@ -2,7 +2,6 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
-
 function AddBlog() {
   const navigate = useNavigate();
   const API = import.meta.env.VITE_API_URL;
@@ -14,6 +13,7 @@ function AddBlog() {
   });
 
   const [errors, setErrors] = useState({});
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
     setFormData({
@@ -56,6 +56,8 @@ function AddBlog() {
     }
 
     try {
+      setLoading(true);
+
       const response = await axios.post(`${API}/blogs`, formData);
 
       alert(response.data.message);
@@ -68,14 +70,16 @@ function AddBlog() {
 
       setErrors({});
 
-      // Redirect to Home page
       navigate("/");
     } catch (error) {
       console.error(error);
 
       alert(
-        error.response?.data?.message || "Something went wrong!"
+        error.response?.data?.message ||
+          "Failed to publish blog. Please try again."
       );
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -84,9 +88,11 @@ function AddBlog() {
       <div className="card shadow p-4">
         <h2 className="text-center mb-4">Add New Blog</h2>
 
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} autoComplete="off">
+          {/* Blog Title */}
           <div className="mb-3">
             <label className="form-label">Blog Title</label>
+
             <input
               type="text"
               name="title"
@@ -94,14 +100,18 @@ function AddBlog() {
               placeholder="Enter blog title"
               value={formData.title}
               onChange={handleChange}
+              maxLength={100}
             />
+
             {errors.title && (
               <small className="text-danger">{errors.title}</small>
             )}
           </div>
 
+          {/* Author */}
           <div className="mb-3">
             <label className="form-label">Author Name</label>
+
             <input
               type="text"
               name="author"
@@ -109,14 +119,18 @@ function AddBlog() {
               placeholder="Enter author name"
               value={formData.author}
               onChange={handleChange}
+              maxLength={50}
             />
+
             {errors.author && (
               <small className="text-danger">{errors.author}</small>
             )}
           </div>
 
+          {/* Content */}
           <div className="mb-3">
             <label className="form-label">Blog Content</label>
+
             <textarea
               name="content"
               rows="5"
@@ -124,14 +138,20 @@ function AddBlog() {
               placeholder="Write your blog..."
               value={formData.content}
               onChange={handleChange}
+              maxLength={2000}
             ></textarea>
+
             {errors.content && (
               <small className="text-danger">{errors.content}</small>
             )}
           </div>
 
-          <button type="submit" className="btn btn-primary w-100">
-            Publish Blog
+          <button
+            type="submit"
+            className="btn btn-primary w-100"
+            disabled={loading}
+          >
+            {loading ? "Publishing..." : "Publish Blog"}
           </button>
         </form>
       </div>

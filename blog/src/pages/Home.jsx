@@ -22,6 +22,10 @@ function Home() {
     fetchBlogs();
   }, []);
 
+   if (loading) {
+    return <h3 className="text-center mt-5">Loading...</h3>;
+  }
+
   return (
     <div className="container py-5">
       {/* Hero Section */}
