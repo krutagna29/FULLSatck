@@ -346,6 +346,39 @@ Successfully deployed the **BLOGDEN** application with a live frontend and backe
 
 ---
 
+---
+
+## ✅ Day 13 – Testing, Bug Fixes & Code Optimization
+
+### Completed
+
+- Tested the application on desktop, tablet, and mobile devices
+- Fixed responsive layout issues across all pages
+- Resolved navbar toggle issues on smaller screens
+- Improved navigation and overall user experience
+- Optimized API integration with the deployed backend
+- Removed unused code and unnecessary imports
+- Refactored React components for better readability and maintainability
+- Improved CSS structure and responsiveness
+- Verified all CRUD (Create, Read, Update, Delete) operations
+- Tested the deployed application on Vercel and Render
+
+### Outcome
+
+Successfully improved the overall quality of the **BLOGDEN** application by fixing bugs, enhancing responsiveness, optimizing performance, and cleaning the codebase. The project is now stable, responsive, and production-ready.
+
+---
+
+# 🌐 Live Demo
+
+### Frontend (Vercel)
+
+https://blogden-delta.vercel.app
+
+### Backend (Render)
+
+https://blogden-qg1k.onrender.com
+
 # 👨‍💻 Author
 
 **Krutagna Patel**
