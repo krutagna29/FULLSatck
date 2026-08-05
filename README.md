@@ -369,15 +369,63 @@ Successfully improved the overall quality of the **BLOGDEN** application by fixi
 
 ---
 
-# 🌐 Live Demo
+---
 
-### Frontend (Vercel)
+# ✅ Day 14 – Final Submission
 
-https://blogden-delta.vercel.app
+## 📌 Task
 
-### Backend (Render)
+Submit the GitHub repository, live website, project documentation, demo video, and final Google Form.
 
+## ✅ Completed
+
+- Finalized the BlogDen Full Stack Blog Website.
+- Verified all CRUD (Create, Read, Update, Delete) operations.
+- Tested the application on desktop and mobile devices.
+- Updated the project documentation (README.md).
+- Organized and cleaned the project repository.
+- Deployed the React frontend on Vercel.
+- Deployed the Express.js backend on Render.
+- Prepared the project demo video.
+- Submitted the GitHub repository, live website, documentation, demo video, and final Google Form.
+
+## 🌐 Project Links
+
+### GitHub Repository
+
+```text
+https://github.com/krutagna29/blogden
+```
+
+### Live Frontend
+
+```text
+https://blogden-delta.vercel.app/
+```
+
+### Live Backend
+
+```text
 https://blogden-qg1k.onrender.com
+```
+
+### Documentation
+
+```text
+README.md
+```
+
+### Demo Video
+
+```text
+https://drive.google.com/file/d/1Sy7zITBTA7eH_GbB7s2RaELmrdjqJ9mC/view?usp=drive_link
+```
+
+## 🎯 Outcome
+
+Successfully completed and submitted the **BLOGDEN – Full Stack Blog Website** developed during the **14-Day Full Stack Development Internship** at **Codomax Digital Solutions**. The application is fully functional, deployed online, documented, and ready for demonstration.
+
+---
 
 # 👨‍💻 Author
 
