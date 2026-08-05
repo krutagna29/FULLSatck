@@ -389,36 +389,24 @@ Submit the GitHub repository, live website, project documentation, demo video, a
 - Prepared the project demo video.
 - Submitted the GitHub repository, live website, documentation, demo video, and final Google Form.
 
-## 🌐 Project Links
 
-### GitHub Repository
 
-```text
-https://github.com/krutagna29/blogden
-```
+# 🌐 Project Links
 
-### Live Frontend
+## 📂 GitHub Repository
+🔗 https://github.com/krutagna29/blogden
 
-```text
-https://blogden-delta.vercel.app/
-```
+## 🌍 Live Frontend
+🔗 https://blogden-delta.vercel.app/
 
-### Live Backend
+## ⚙️ Live Backend
+🔗 https://blogden-qg1k.onrender.com
 
-```text
-https://blogden-qg1k.onrender.com
-```
+## 📖 Documentation
+🔗 https://github.com/krutagna29/blogden/README.md
 
-### Documentation
-
-```text
-README.md
-```
-
-### Demo Video
-
-```text
-https://drive.google.com/file/d/1Sy7zITBTA7eH_GbB7s2RaELmrdjqJ9mC/view?usp=drive_link
+## 🎥 Demo Video
+🔗 https://drive.google.com/file/d/1Sy7zITBTA7eH_GbB7s2RaELmrdjqJ9mC/view?usp=drive_link
 ```
 
 ## 🎯 Outcome
