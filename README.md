@@ -306,7 +306,7 @@ Successfully integrated the frontend with the backend, enabling complete CRUD op
 
 ---
 
-# 📅 Day 11 – UI Enhancements
+## ✅ Day 11 – UI Enhancements
 
 ## 📌 Task
 Add animations, transitions, hover effects, and smooth scrolling.
